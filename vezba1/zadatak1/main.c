@@ -1,13 +1,7 @@
-#include <stdio.h>
-int main()
+int Calculation(int a, int b)
 {
-int a = 3;
-int b = 8;
-int c;
 if(a > b)
-c = a - b;
+return a - b;
 else
-c = b - a;
-printf("Result: %d\n", c);
-return 0;
+return b - a;
 }
