@@ -1,6 +1,13 @@
 #include <stdio.h>
-int main() {
-   // printf() displays the string inside quotation
-   printf("Hello, World!");
-   return 0;
+int main()
+{
+int a = 5;
+int b = 4;
+int c;
+if(a > b)
+c = a - b;
+else
+c = b - a;
+printf("Result: %d\n", c);
+return 0;
 }
