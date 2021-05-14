@@ -1,7 +1,7 @@
 #ifndef PULSING_H_
 #define PULSING_H_
 
-#include "pin.h"
+#include "../pin_driver/pin.h"
 #include "timer0.h"
 #include "utils.h"
 

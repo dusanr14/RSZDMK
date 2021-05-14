@@ -11,7 +11,7 @@
  * @return Povratna vrednost je tipa unsigned long i ima vrednost broja milisekundi
  * proteklih od pocetka aplikacije do trenutka izlaska iz funkcije
  */
-unsigned long timer0DelayMs(unsigned long delay_length);
+void timer0DelayMs(uint32_t delay_length);
 
 /**
  * timer0InteruptInit - Funkcija koja inicijalizuje timer 0 tako da pravi prekide
@@ -19,5 +19,15 @@ unsigned long timer0DelayMs(unsigned long delay_length);
  * @return Nema povratnu vrednost
  */
 void timer0InteruptInit();
+
+/**
+* timer0millis - Funkcija koja bezbedno vraca kao povratnu vrednost broj
+milisekundi
+* proteklih od pocetka merenja vremena
+* @return Povratna vrednost je tipa uint32_t i ima vrednost broja
+milisekundi
+* proteklih od pocetka merenja vremena
+*/
+uint32_t timer0millis();
 
 #endif /* TIMER0_H_ */
