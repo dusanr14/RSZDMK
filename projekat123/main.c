@@ -1,10 +1,11 @@
 /**
-* @file ime_datoteke.c
-* @brief Opis datoteke
+* @file main.c
+* @brief Aplikacija koja implementira ogranicen broj treptanja diode
 * @author Dusan Radisic
-* @date 11-11-1111
+* @date 14-03-2021
 * @version 1.0
 */
+
 
 
 #include "pulsing.h"
@@ -48,8 +49,8 @@ int main()
 		pinPulsing(PORT_B, DIODE_PIN, SLOW, SLOW_REPETITIONS);
 
         // Kraj
-        while (1)
-        ;
+		 while (1)
+		        ;
 
     }
 
