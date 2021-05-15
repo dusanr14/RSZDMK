@@ -127,7 +127,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x2fa
+.text           0x00000000      0x404
  *(.vectors)
  .vectors       0x00000000       0x68 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vectors
@@ -242,16 +242,22 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text.usartGetString
                 0x00000276       0x3c C:\Users\Dusan\Desktop\RSZDMK\usart\Release\libusart.a(usart.o)
                 0x00000276                usartGetString
- .text.libgcc   0x000002b2       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x000002b2                __udivmodsi4
- .text.libgcc   0x000002f6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000002f6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x000002f6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
-                0x000002f6                . = ALIGN (0x2)
+ .text.usartPeek
+                0x000002b2       0x1a C:\Users\Dusan\Desktop\RSZDMK\usart\Release\libusart.a(usart.o)
+                0x000002b2                usartPeek
+ .text.usartParseInt
+                0x000002cc       0xf0 C:\Users\Dusan\Desktop\RSZDMK\usart\Release\libusart.a(usart.o)
+                0x000002cc                usartParseInt
+ .text.libgcc   0x000003bc       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x000003bc                __udivmodsi4
+ .text.libgcc   0x00000400        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000400        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000400        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x00000400                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000002f6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000002f6                exit
-                0x000002f6                _exit
+ .fini9         0x00000400        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000400                exit
+                0x00000400                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -270,11 +276,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000002f6        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000400        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000002fa                _etext = .
+                0x00000404                _etext = .
 
-.data           0x00800100       0x12 load address 0x000002fa
+.data           0x00800100       0x12 load address 0x00000404
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
@@ -317,8 +323,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  COMMON         0x00800115       0x40 C:\Users\Dusan\Desktop\RSZDMK\usart\Release\libusart.a(usart.o)
                 0x00800115                Rx_Buffer
                 0x00800155                PROVIDE (__bss_end, .)
-                0x000002fa                __data_load_start = LOADADDR (.data)
-                0x0000030c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000404                __data_load_start = LOADADDR (.data)
+                0x00000416                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800155        0x0
                 0x00800155                PROVIDE (__noinit_start, .)
