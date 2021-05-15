@@ -103,3 +103,40 @@ uint8_t usartGetString(int8_t *s)
 	s[len] = 0;						// Terminacija stringa
 	return len;						// Vraca broj ocitanih karaktera
 }
+
+int8_t usartPeek()
+{
+	int8_t c;
+
+	if (!Rx_Buffer_Size)
+		return -1;
+	c = Rx_Buffer[Rx_Buffer_First];
+
+
+	return c;
+}
+
+int16_t usartParseInt()
+{
+	int8_t c;
+	uint16_t res = 0;
+	int8_t sign = 1;
+
+	while ((usartPeek() < '0' && usartPeek() != '-') || usartPeek() > '9')
+	{
+		c = usartGetChar();
+	}
+
+	if(usartPeek() == '-')
+	{
+		c= usartGetChar();
+		sign= -1;
+	}
+
+	while(usartPeek() >= '0' && usartPeek() <= '9')
+	{
+		c= usartGetChar();
+		res = res * 10 + (c - '0');
+	}
+	return res * sign;
+}

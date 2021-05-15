@@ -56,4 +56,8 @@ int8_t usartGetChar();
  */
 uint8_t usartGetString(int8_t *s);
 
+int8_t usartPeek();
+
+int16_t usartParseInt();
+
 #endif /* USART_H_ */
