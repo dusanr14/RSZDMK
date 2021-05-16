@@ -30,7 +30,6 @@ int8_t provera(int8_t string1[],int8_t string2[], int8_t duzina,int8_t DUZINA)
 	{
 		if(string1[i] != string2[i])
 		{
-			return 0;
 
 		}
 	}
